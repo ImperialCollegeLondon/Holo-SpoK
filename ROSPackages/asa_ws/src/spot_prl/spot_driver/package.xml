@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>spot_driver</name>
+  <version>0.0.0</version>
+  <description>
+    ROS wrapper for the Spot SDK (https://github.com/boston-dynamics/spot-sdk)
+    that exposes some key capabilities via standard ROS messages
+  </description>
+  <maintainer email="rac17@ic.ac.uk">roalchaq</maintainer>
+  <license>TODO</license>
+
+  <!-- Dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <build_depend>rospy</build_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <exec_depend>rospy</exec_depend>
+
+  <build_depend>std_msgs</build_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+  <build_depend>geometry_msgs</build_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+
+  <build_depend>sensor_msgs</build_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+
+  <build_depend>diagnostic_msgs</build_depend>
+  <build_export_depend>diagnostic_msgs</build_export_depend>
+  <exec_depend>diagnostic_msgs</exec_depend>
+  
+</package>

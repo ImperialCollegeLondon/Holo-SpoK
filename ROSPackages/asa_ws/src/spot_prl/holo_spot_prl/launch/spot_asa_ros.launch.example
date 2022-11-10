@@ -1,0 +1,42 @@
+<!--
+    Personal Robotics Laboratory - Imperial College London, 2022
+    Author: Rodrigo Chacon Quesada (rac17@ic.ac.uk)
+    Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+    (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
+-->
+<launch>
+
+    <!-- ROS -> Unity coordinate frame conversion. -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="anchor_tf" args="0 0 0 -0.5 0.5 0.5 0.5 asa_anchor anchor_rot" />
+
+    <!-- Simple republishing script to publish information from /tf as geometry_msgs/TransformStamped-->
+    <node pkg="holo_spot_prl" type="tf_transform.py" name="tf_transform">
+        <param name="parent_frame" value="anchor_rot" />
+        <param name="child_frame" value="vision_odometry_frame" />
+    </node>
+
+    <!-- Simple republishing script to publish information from /tf as geometry_msgs/TransformStamped-->
+    <node pkg="holo_spot_prl" type="spot_base_link.py" name="spot_base_link">
+        <param name="sbl_parent_frame" value="vision_odometry_frame" />
+        <param name="sbl_child_frame" value="base_link" />
+    </node>
+
+    <!-- Script that handles all the commands send to Spot from the HoloLens-->
+    <node pkg="holo_spot_prl" type="holo_spot.py" name="holo_spot" />
+
+    <!-- Azure Spatial Anchors -->
+    <include file="$(find holo_spot_prl)/launch/asa_ros.launch">
+    	<arg name="account_id" default="" />
+  	    <arg name="account_key" default="" />
+  	    <arg name="account_domain" default="" />
+        <arg name="anchor_id" default="" />
+        <arg name="anchor_frame_id" default="asa_anchor" />
+        <arg name="use_approx_sync_policy" default="false"/>
+        <arg name="subscriber_queue_size" default="1"/>
+        <arg name="query_last_anchor_id_from_cache" default="true"/>
+    </include>
+
+    <!-- Run the webserver for communication with other devices -->
+    <!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" /> -->
+
+</launch>

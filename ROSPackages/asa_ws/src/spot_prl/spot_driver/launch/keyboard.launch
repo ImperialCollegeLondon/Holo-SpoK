@@ -1,0 +1,16 @@
+<!--
+    Personal Robotics Laboratory - Imperial College London, 2022
+    Author: Rodrigo Chacon Quesada (rac17@ic.ac.uk)
+    Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+    (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
+-->
+<launch>
+
+    <arg name="lin_vel" default="1.0" />
+    <arg name="ang_vel" default="1.0" />
+    <arg name="height_up" default="1.0" />
+    <arg name="height_down" default ="-1.0" />
+
+    <node pkg="spot_driver" type="keyboard_teleop.py" name="keyboard_teleop" args="--lin_vel $(arg lin_vel) --ang_vel $(arg ang_vel) --height_up $(arg height_up) --height_down $(arg height_down)" output="screen"/>
+    
+</launch>
