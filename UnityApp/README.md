@@ -124,4 +124,8 @@ The following is a list of repositiories that we found useful to build our appli
 
 ## Troubleshooting
 
+* If you get an error when building your app in Unity (something related to WSATestCertificate having expired), go to UnityApp/Assets and delete the certificate. Then try again.
+
+* If you get an error while trying to deploy the app using a cable (something like the device actively refusing the connection), try deploying the app using the "Remote machine" option first.
+
 * If after creating an ASA anchor you cannot find it, check that your HL has internet access. Alternatively, you can check that you are actually creating anchors by checking the dashboard of your ASA resource for recently created anchors. If you don't see any, check your internet connection and your ASA resource credentials.

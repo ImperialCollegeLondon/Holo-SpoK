@@ -139,6 +139,7 @@ CATKIN_IGNORE
 
 # vs code
 .vscode/
+.vsconfig
 
 # ASA Linux SDK
 ROSPackages/asa_linux_sdk/azure-spatial-anchors-2.7.0-release0005-Linux.deb

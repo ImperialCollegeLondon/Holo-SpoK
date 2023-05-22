@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: PRLHoloLensROS
+  productName: HoloSpotICRA2023
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -125,7 +125,8 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: -8245990554965789940, guid: fedb674c37ecbcb498dfa4ee39e0f864, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -591,14 +592,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: HoloSpotIROS2022
+  metroPackageName: HoloSpotICRA2023
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 00cbf07c4579d901
-  metroApplicationDescription: HoloSpotIROS2022
+  metroCertificateNotAfter: 80adc3f3deaada01
+  metroApplicationDescription: HoloSpotICRA2023
   wsaImages: {}
   metroTileShortName: HoloSpotIROS2022
   metroTileShowName: 0
