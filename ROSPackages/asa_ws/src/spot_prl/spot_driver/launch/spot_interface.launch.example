@@ -1,5 +1,5 @@
 <!--
-    Personal Robotics Laboratory - Imperial College London, 2022
+    Personal Robotics Laboratory - Imperial College London, 2023
     Author: Rodrigo Chacon Quesada (rac17@ic.ac.uk)
     Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
     (https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
@@ -13,6 +13,8 @@
     <arg name="stairs_mode" default ="n" />
 
     <node pkg="spot_driver" type="spot_interface.py" name="spot_interface" args="--stairs_mode $(arg stairs_mode) --motors_on $(arg motors_on) --username $(arg username) --password $(arg password) $(arg hostname)" output="screen"/>
+
+    <node pkg="spot_driver" type="heartbeat.py" name="heartbeat" output="screen"/>
 
     <!-- Run the webserver for communication with other devices -->
     <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
