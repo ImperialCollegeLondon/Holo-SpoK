@@ -23,9 +23,14 @@ namespace RosSharp.RosBridgeClient
     {
         public string Topic;
         public float TimeStep;
+        //Added for reconnect behaviour
+        public bool AutoResubscribeOnConnected = true;
 
         private RosConnector rosConnector;
         private readonly int SecondsTimeout = 1;
+
+        //Added for reconnect behaviour
+        private bool addedReconnectionEventHandler = false;
 
         protected virtual void Start()
         {
@@ -35,11 +40,24 @@ namespace RosSharp.RosBridgeClient
 
         private void Subscribe()
         {
+            //Added for reconnect behaviour
+            if (AutoResubscribeOnConnected && !addedReconnectionEventHandler)
+            {
+                addedReconnectionEventHandler = true;
+                rosConnector.OnRosConnectorReConnected += Protocol_OnConnected;
+            }
 
             if (!rosConnector.IsConnected.WaitOne(SecondsTimeout * 1000))
                 Debug.LogWarning("Failed to subscribe: RosConnector not connected");
 
-            rosConnector.RosSocket.Subscribe<T>(Topic, ReceiveMessage, (int)(TimeStep * 1000)); // the rate(in ms in between messages) at which to throttle the topics
+            //Modified for reconnect behaviour
+            if (rosConnector.RosSocket != null) //Can be null if no connetion could established
+                rosConnector.RosSocket.Subscribe<T>(Topic, ReceiveMessage, (int)(TimeStep * 1000)); // the rate(in ms in between messages) at which to throttle the topics
+        }
+
+        private void Protocol_OnConnected(object sender, System.EventArgs e)
+        {
+            Subscribe();
         }
 
         protected abstract void ReceiveMessage(T message);

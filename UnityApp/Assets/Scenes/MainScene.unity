@@ -1168,6 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /transform_output
   TimeStep: 0
+  AutoResubscribeOnConnected: 1
   Scaling: 10
   transformToApply: {fileID: 1133461879}
   useLocalTransform: 1
@@ -1186,6 +1187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Topic: /spot_base_link
   TimeStep: 0
+  AutoResubscribeOnConnected: 1
   Scaling: 1
   transformToApply: {fileID: 1277506313}
   useLocalTransform: 1
@@ -1203,6 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /hololens/goal_pose
+  AutoResubscribeOnConnected: 1
   PublishedTransform: {fileID: 11400000, guid: 6f0adfb97a00fe549bb270bf0b69f173, type: 2}
   FrameId: vision_odometry_frame
 --- !u!114 &363111333
@@ -1245,6 +1248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /hololens/anchor_id
+  AutoResubscribeOnConnected: 1
   anchorID: {fileID: 11400000, guid: f5df967dd793ec4459035fd65d9dff18, type: 2}
 --- !u!114 &363111335
 MonoBehaviour:
@@ -1273,6 +1277,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &363111336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363111329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ba66e468edb61409b57867a2acbe51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /heartbeat
+  TimeStep: 0
+  AutoResubscribeOnConnected: 1
+  timeOutSecondsThreshold: 2
 --- !u!1 &533853454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1567,6 @@ GameObject:
   - component: {fileID: 623587548}
   - component: {fileID: 623587547}
   - component: {fileID: 623587546}
-  - component: {fileID: 623587545}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1569,29 +1588,6 @@ Transform:
   m_Father: {fileID: 1859620597}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &623587545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 623587543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf98dd1206224111a38765365e98e207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockCursorWhenFocusLocked: 1
-  setCursorInvisibleWhenFocusLocked: 0
-  maxGazeCollisionDistance: 10
-  raycastLayerMasks:
-  - serializedVersion: 2
-    m_Bits: 4294967291
-  stabilizer:
-    storedStabilitySamples: 60
-  gazeTransform: {fileID: 0}
-  minHeadVelocityThreshold: 0.5
-  maxHeadVelocityThreshold: 2
 --- !u!114 &623587546
 MonoBehaviour:
   m_ObjectHideFlags: 0

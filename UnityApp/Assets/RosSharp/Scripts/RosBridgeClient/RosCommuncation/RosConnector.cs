@@ -16,6 +16,7 @@ limitations under the License.
 */
 
 using System;
+using System.Collections;
 using System.Threading;
 using RosSharp.RosBridgeClient.Protocols;
 using UnityEngine;
@@ -33,6 +34,16 @@ namespace RosSharp.RosBridgeClient
 
         public ManualResetEvent IsConnected { get; private set; }
 
+        //Added for heartbeat signal logic
+        [SerializeField]
+        private bool autoReconnectOnConnectionLost = true;
+        private bool manualOnCloseTrigger = false;
+        private bool startReconnectionCycle = true;
+
+        public bool isConnected = false;
+
+        public event EventHandler OnRosConnectorReConnected;
+
         public virtual void Awake()
         {
             RosBridgeServerUrl = PlayerPrefs.GetString("server_address");
@@ -45,18 +56,31 @@ namespace RosSharp.RosBridgeClient
 #endif
             IsConnected = new ManualResetEvent(false);
 #if WINDOWS_UWP
-            ConnectAndWait();
+            //Modified for heartbeat logic
+            //ConnectAndWait();
+            manualOnCloseTrigger = true;
 #else
             new Thread(ConnectAndWait).Start();
 #endif
+        }
+
+        //Added for heartbeat signal
+        public void Update()
+        {
+            if (startReconnectionCycle)
+            {
+                startReconnectionCycle = false;
+                StartCoroutine(Reconnect());
+            }
         }
 
         protected void ConnectAndWait()
         {
             RosSocket = ConnectToRos(protocol, RosBridgeServerUrl, OnConnected, OnClosed, Serializer);
 
-            if (!IsConnected.WaitOne(SecondsTimeout * 1000))
-                Debug.LogWarning("Failed to connect to RosBridge at: " + RosBridgeServerUrl);
+            //Removed for heartbeat logic
+            //if (!IsConnected.WaitOne(SecondsTimeout * 1000))
+                //Debug.LogWarning("Failed to connect to RosBridge at: " + RosBridgeServerUrl);
         }
 
         public static RosSocket ConnectToRos(Protocol protocolType, string serverUrl, EventHandler onConnected = null, EventHandler onClosed = null, RosSocket.SerializerEnum serializer = RosSocket.SerializerEnum.Microsoft)
@@ -97,14 +121,48 @@ namespace RosSharp.RosBridgeClient
 
         private void OnConnected(object sender, EventArgs e)
         {
+            //Added for heartbeat logic
+            isConnected = true;
             IsConnected.Set();
-            Debug.Log("Connected to RosBridge: " + RosBridgeServerUrl);
+            //Removed for heartbeat logic
+            //Debug.Log("Connected to RosBridge: " + RosBridgeServerUrl);
+            OnRosConnectorReConnected?.Invoke(this, EventArgs.Empty);
         }
 
         private void OnClosed(object sender, EventArgs e)
         {
+            //Added for heartbeat logic
+            isConnected = false;
             IsConnected.Reset();
-            Debug.Log("Disconnected from RosBridge: " + RosBridgeServerUrl);
+            //Removed for heartbeat logic
+            //Debug.Log("Disconnected from RosBridge: " + RosBridgeServerUrl);
+        }
+
+        // Added for heartbeat logic
+        private IEnumerator Reconnect()
+        {
+            if (isConnected)
+                yield break;
+
+            new Thread(ConnectAndWait).Start();
+            yield return new WaitForSeconds(2);
+
+            if (isConnected)
+                yield break;
+
+            yield return Reconnect();
+        }
+
+        public void Reconnecting()
+        {
+            if (autoReconnectOnConnectionLost)
+            {
+                startReconnectionCycle = true;
+            }
+            if (manualOnCloseTrigger)
+            {
+                OnClosed(this, EventArgs.Empty);
+            }
         }
     }
 }
