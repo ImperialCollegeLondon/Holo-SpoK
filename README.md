@@ -6,7 +6,7 @@
 
 </div>
 
-This project includes a Unity app and a set of ROS packages for controlling Boston Dynamics' Spot using the Microsoft's HoloLens 2 and is primarily based on the paper [Holo-SpoK: Affordance-Aware Augmented Reality Control of Legged Manipulators](https://doi.org/10.1109/IROS47612.2022.9981989) ([Video](https://www.youtube.com/watch?v=IKRCgP6j_PU)). If you find this repository useful for your research, please cite this paper. A bibtex entry is provided below:
+This project includes a Unity app and a set of ROS packages for controlling Boston Dynamics' Spot using the Microsoft's HoloLens 2 and is primarily based on the paper [Holo-SpoK: Affordance-Aware Augmented Reality Control of Legged Manipulators](https://doi.org/10.1109/IROS47612.2022.9981989) - [Open Access](https://spiral.imperial.ac.uk/handle/10044/1/100481) - [Video](https://www.youtube.com/watch?v=IKRCgP6j_PU). If you find this repository useful for your research, please cite this paper. A bibtex entry is provided below:
 
 ```
 @INPROCEEDINGS{holospok,
