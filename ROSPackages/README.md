@@ -1,4 +1,4 @@
-# Holo-Spot ROS packages
+# Holo-SpoK ROS packages
 
 This repository builds a docker image aimed at running on SpotCore to colocalise Spot and the MS HoloLens through ROS.
 
