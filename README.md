@@ -14,8 +14,6 @@ This project includes a Unity app and a set of ROS packages for controlling Bost
   booktitle={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
   title={Holo-SpoK: Affordance-Aware Augmented Reality Control of Legged Manipulators}, 
   year={2022},
-  volume={},
-  number={},
   pages={856-862},
   keywords={Legged locomotion;Navigation;Affordances;Resists;User interfaces;Robot sensing systems;Reliability},
   doi={10.1109/IROS47612.2022.9981989}
