@@ -21,45 +21,9 @@ This project includes a Unity app and a set of ROS packages for controlling Bost
 ```
 We have also succesfully used Holo-SpoK in the following papers (check them out!):
 
-```
-@INPROCEEDINGS{10161278,
-  author={Chacón Quesada, Rodrigo and Demiris, Yiannis},
-  booktitle={2023 IEEE International Conference on Robotics and Automation (ICRA)}, 
-  title={Design and Evaluation of an Augmented Reality Head-Mounted Display User Interface for Controlling Legged Manipulators}, 
-  year={2023},
-  pages={11950-11956},
-  keywords={Legged locomotion;Head-mounted displays;Automation;Resists;User interfaces;Manipulators;Assistive robots},
-  doi={10.1109/ICRA48891.2023.10161278}
-}
-```
-```
-@article{10.1145/3660649,
-  author = {Chac\'{o}n Quesada, Rodrigo and Demiris, Yiannis},
-  title = {Multi-Dimensional Evaluation of an Augmented Reality Head-Mounted Display User Interface for Controlling Legged Manipulators},
-  year = {2024},
-  issue_date = {June 2024},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  volume = {13},
-  number = {2},
-  url = {https://doi.org/10.1145/3660649},
-  doi = {10.1145/3660649},
-  journal = {J. Hum.-Robot Interact.},
-  month = jun,
-  articleno = {30},
-  numpages = {37},
-  keywords = {Human-robot interaction, trust, cognitive workload, technology acceptance, fluency, system usability, immersion, user interfaces, augmented reality, head-mounted display, legged manipulators, Bayesian data analysis, cognitive offloading}
-}
-```
-```
-@INPROCEEDINGS{10161278,
-  author={Chacón Quesada, Rodrigo, Estévez Casado, fernando and Demiris, Yiannis},
-  booktitle={2024 IEEE International Conference on Robot and Human Interactive Communication (IEEE RO-MAN 2024)}, 
-  title={On the Effect of Augmented-Reality Multi-User Interfaces and Shared Mental Models on Human-Robot Trust}, 
-  year={2024},
-  pages={In press},
-}
-```
+* [Design and Evaluation of an Augmented Reality Head-Mounted Display User Interface for Controlling Legged Manipulators (ICRA 2023)](https://doi.org/10.1109/ICRA48891.2023.10161278) - [video](https://www.youtube.com/watch?v=k4IMFTW_9iM)
+* [Multi-Dimensional Evaluation of an Augmented Reality Head-Mounted Display User Interface for Controlling Legged Manipulators (ACM Transactions on Human-Robot Interaction)](https://doi.org/10.1145/3660649) - [video](https://www.youtube.com/watch?v=I9IfQbMKc4c)
+* [On the Effect of Augmented-Reality Multi-User Interfaces and Shared Mental Models on Human-Robot Trust (IEEE RO-MAN 2024)]() - [video](https://www.youtube.com/watch?v=mK19JpjVCs0)
 
 ## Sections
 
