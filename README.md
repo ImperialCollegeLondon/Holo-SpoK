@@ -1,4 +1,4 @@
-# Personal Robotics Laboratory - Holo-Spot
+# Personal Robotics Laboratory - Holo-SpoK
 
 <div style="text-align: center;">
 
@@ -29,9 +29,9 @@ Follow the instructions in the following README files to deploy the HL2 App firs
 * [Unity App](UnityApp/README.md)
 * [ROS Packages](ROSPackages/README.md)
 
-## What are you using HoloSpot for?
+## What are you using Holo-SpoK for?
 
-We are very curious what you use HoloSpot for! Let us know about your projects, whether finished, ongoing, or first idea. This will helps us with our sponsors :)
+We are very curious what you use Holo-SpoK for! Let us know about your projects, whether finished, ongoing, or first idea. This will helps us with our sponsors :)
 
 ## Warranty
 
