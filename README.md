@@ -22,7 +22,7 @@ This project includes a Unity app and a set of ROS packages for controlling Bost
 We have also succesfully used Holo-SpoK in the following papers (check them out!):
 
 * Design and Evaluation of an Augmented Reality Head-Mounted Display User Interface for Controlling Legged Manipulators (ICRA 2023) - [Paper](https://doi.org/10.1109/ICRA48891.2023.10161278) - [Open Access](https://spiral.imperial.ac.uk/handle/10044/1/107120) - [Video](https://www.youtube.com/watch?v=k4IMFTW_9iM)
-* Multi-Dimensional Evaluation of an Augmented Reality Head-Mounted Display User Interface for Controlling Legged Manipulators (ACM Transactions on Human-Robot Interaction 2024) - [Open Acccess](https://doi.org/10.1145/3660649) - [Video](https://www.youtube.com/watch?v=I9IfQbMKc4c)
+* Multi-Dimensional Evaluation of an Augmented Reality Head-Mounted Display User Interface for Controlling Legged Manipulators (ACM Transactions on Human-Robot Interaction 2024) - [Open Access](https://doi.org/10.1145/3660649) - [Video](https://www.youtube.com/watch?v=I9IfQbMKc4c)
 * On the Effect of Augmented-Reality Multi-User Interfaces and Shared Mental Models on Human-Robot Trust (IEEE RO-MAN 2024) - [In press]() - [Video](https://www.youtube.com/watch?v=mK19JpjVCs0)
 
 More coming soon! 
