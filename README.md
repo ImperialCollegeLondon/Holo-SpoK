@@ -25,6 +25,8 @@ We have also succesfully used Holo-SpoK in the following papers (check them out!
 * Multi-Dimensional Evaluation of an Augmented Reality Head-Mounted Display User Interface for Controlling Legged Manipulators (ACM Transactions on Human-Robot Interaction 2024) - [Open Acccess](https://doi.org/10.1145/3660649) - [Video](https://www.youtube.com/watch?v=I9IfQbMKc4c)
 * On the Effect of Augmented-Reality Multi-User Interfaces and Shared Mental Models on Human-Robot Trust (IEEE RO-MAN 2024) - [In press]() - [Video](https://www.youtube.com/watch?v=mK19JpjVCs0)
 
+More coming soon! 
+
 ## Sections
 
 Follow the instructions in the following README files to deploy the HL2 App first and then build the ROS packages required:
