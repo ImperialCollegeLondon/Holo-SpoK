@@ -2,11 +2,12 @@
 
 <div style="text-align: center;">
 
-![](media/main.gif)
+<video auto-play="true" loop="loop" muted="muted" plays-inline="true" src="https://github.com/user-attachments/assets/00832497-01a3-40c0-b4d4-d84e1bbe166e">  video </video> 
+
 
 </div>
 
-This project includes a Unity app and a set of ROS packages for controlling Boston Dynamics' Spot using the Microsoft's HoloLens 2 and is primarily based on the paper [Holo-SpoK: Affordance-Aware Augmented Reality Control of Legged Manipulators](https://doi.org/10.1109/IROS47612.2022.9981989) - [Open Access](https://spiral.imperial.ac.uk/handle/10044/1/100481) - [Video](https://www.youtube.com/watch?v=IKRCgP6j_PU). If you find this repository useful for your research, please cite this paper. A bibtex entry is provided below:
+This project includes a Unity app and a set of ROS packages for controlling Boston Dynamics' Spot using the Microsoft's HoloLens 2 and is the codebase for the paper [Holo-SpoK: Affordance-Aware Augmented Reality Control of Legged Manipulators](https://doi.org/10.1109/IROS47612.2022.9981989) - [Open Access](https://spiral.imperial.ac.uk/handle/10044/1/100481) - [Video](https://www.youtube.com/watch?v=IKRCgP6j_PU). If you find this repository useful for your research, please cite this paper. A bibtex entry is provided below:
 
 ```
 @INPROCEEDINGS{holospok,
@@ -19,7 +20,7 @@ This project includes a Unity app and a set of ROS packages for controlling Bost
   doi={10.1109/IROS47612.2022.9981989}
 }
 ```
-We have also succesfully used Holo-SpoK in the following papers (check them out!):
+We have also succesfully used this codebase in the following papers (check them out!):
 
 * Design and Evaluation of an Augmented Reality Head-Mounted Display User Interface for Controlling Legged Manipulators (ICRA 2023) - [Paper](https://doi.org/10.1109/ICRA48891.2023.10161278) - [Open Access](https://spiral.imperial.ac.uk/handle/10044/1/107120) - [Video](https://www.youtube.com/watch?v=k4IMFTW_9iM)
 * Multi-Dimensional Evaluation of an Augmented Reality Head-Mounted Display User Interface for Controlling Legged Manipulators (ACM Transactions on Human-Robot Interaction 2024) - [Open Access](https://doi.org/10.1145/3660649) - [Video](https://www.youtube.com/watch?v=I9IfQbMKc4c)
